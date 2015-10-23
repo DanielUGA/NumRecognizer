@@ -18,7 +18,7 @@ import org.apache.lucene.store.FSDirectory;
 public class Searcher {
     public static void main(String[] args) throws IOException {
         BufferedImage img = null;
-            File f = new File("Images/handwrittenNumbers/2/IMG_1180.JPG");
+            File f = new File("OtherImages/Lion.jpg");
             if (f.exists()) {
                 try {
                     img = ImageIO.read(f);
