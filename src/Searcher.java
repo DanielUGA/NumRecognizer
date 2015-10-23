@@ -18,23 +18,17 @@ import org.apache.lucene.store.FSDirectory;
 public class Searcher {
     public static void main(String[] args) throws IOException {
         BufferedImage img = null;
-        boolean passed = false;
        
             File f = new File("Images/img05.JPG");
             if (f.exists()) {
                 try {
                     img = ImageIO.read(f);
-                    passed = true;
+                    
                 } catch (IOException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
       
-        if (!passed) {
-            System.out.println("No image given as first argument.");
-            System.out.println("Run \"Searcher <query image>\" to search for <query image>.");
-            System.exit(1);
-        }
 
 //        IndexReader ir = DirectoryReader.open(FSDirectory.open(Paths.get("indexPath")));
         IndexReader ir = DirectoryReader.open(FSDirectory.open(new File("index")));
